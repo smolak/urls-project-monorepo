@@ -18,10 +18,8 @@ module.exports = {
 
 function projectChanged(currentProject, fromHash, toHash) {
   const execSync = require('child_process').execSync;
-  const getAffected = `npm run nx -- print-affected --base=${fromHash} --head=${toHash}`;
+  const getAffected = `npm run --silent nx -- print-affected --base=${fromHash} --head=${toHash}`;
   const output = execSync(getAffected).toString();
-
-  console.log('HERE:', getAffected, output);
 
   //get the list of changed projects from the output
   const changedProjects = JSON.parse(output).projects;
