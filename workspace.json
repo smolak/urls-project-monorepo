@@ -2,7 +2,18 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "urls-project-web": "apps/urls-project-web",
+    "urls-project-web": {
+      "root": "apps/urls-project-web",
+      "architect": {
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/apps/urls-project-web",
+            "siteId": "c87bd646-3fc2-472d-b693-c6159da7e70f"
+          }
+        }
+      }
+    },
     "urls-project-web-e2e": "apps/urls-project-web-e2e"
   }
 }

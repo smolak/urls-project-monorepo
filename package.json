@@ -10,6 +10,7 @@
   },
   "private": true,
   "devDependencies": {
+    "@netlify-builder/deploy": "^5.0.0",
     "@nrwl/cli": "14.4.0",
     "@nrwl/cypress": "14.4.0",
     "@nrwl/eslint-plugin-nx": "14.4.0",
